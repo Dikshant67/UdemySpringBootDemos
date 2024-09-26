@@ -1,0 +1,14 @@
+package com.springdemo.learn_spring_framework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+//Configure the things that we want Spring to manage 
+public class HelloWorldConfiguration {
+//we can define our beans here in this class so that beans can be used 
+	@Bean
+	public String name() {
+		return "Dikshant";
+	}
+}

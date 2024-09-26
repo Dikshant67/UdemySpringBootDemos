@@ -1,0 +1,21 @@
+package com.springdemo.learn_spring_framework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App02helloworldSpring {
+
+	public static void main(String[] args) {
+	
+		//1.Launch a Spring context
+		var context=new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		//2.Configure the things that  we want spring to manage - @Configuration
+		//Hellowworldconfiguration -@Configuration
+		//name - @Bean
+		//3.Retrieving beans managed by spring
+		System.out.println(context.getBean("name"));
+		System.out.println(context.getBean("printStars1"));
+		System.out.println(context.getBean("age"));
+		System.out.println(context.getBean("Person"));
+	}
+
+}

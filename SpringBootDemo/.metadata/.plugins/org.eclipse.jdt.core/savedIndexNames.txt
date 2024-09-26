@@ -1,0 +1,3 @@
+INDEX VERSION 1.134+D:\Udemy_SpringBoot\SpringBootDemo\.metadata\.plugins\org.eclipse.jdt.core
+286699362.index
+1865797976.index

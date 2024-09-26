@@ -1,0 +1,17 @@
+package com.springdemo.learn_spring_framework;
+
+import com.springdemo.learn_spring_framework.game.GameRunner;
+import com.springdemo.learn_spring_framework.game.MarioGame;
+import com.springdemo.learn_spring_framework.game.SuperCountra;
+
+public class AppGamingBasicJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		var marioGame=new MarioGame();
+		var superCountra = new SuperCountra();
+		var gameRunner=new GameRunner(superCountra);
+		gameRunner.run(); 
+	}
+
+}

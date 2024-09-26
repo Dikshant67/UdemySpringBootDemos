@@ -1,0 +1,79 @@
+package com.springdemo.learn_spring_framework;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+//Configure the things that we want Spring to manage 
+
+//record feature in java 16
+//Eliminate verbocity in creating java beans
+//public accessor methods ,constructor
+//equals ,hashcode and tostring are automatically created.
+//introduced in java 16
+record Person(String name,int age,Address address) {};
+record Address(String firstLine,String city) {};
+public class HelloWorldConfiguration {
+//we can define our beans here in this class so that beans can be used 
+	@Bean
+	public String name() {
+		return "Dikshant";
+	}
+	
+	@Bean
+	public String printStars() {
+		String a="";
+		for(int i=0;i<6;i++)
+		{
+			for(int j=i;j>=0;j--)
+			{	
+				a=a+"*";
+			}
+		a=a+"\n";				
+		}
+		return a;
+	}
+	@Bean
+	public String printStars1() {
+		String a="";
+		for(int i=0;i<6;i++)
+		{
+			for(int j=i;j>=0;j--)
+			{	
+				a=a+"*";
+			}
+		a=a+"\n";				
+		}
+		System.out.println(a);
+		return null;
+	}
+	@Bean
+	public int age() {
+		return 24;
+	}
+	@Bean
+	public Person person() {
+		return new Person("Ram",23,new Address("SB Road","Pune"));
+		
+	}
+	@Bean(name="address2")
+	public Address address() {
+		return new Address("SB Road","Pune");
+		
+	}
+	@Bean
+	public Person person2methodCall() {
+		return new Person(name(),age(),address());//name,age using methods calls 
+	}
+	@Bean
+	public Person person3Parameters(String name,int age,Address address2)
+	{
+		return new Person(name,age ,address2);
+	}
+	@Bean
+	public Address address1() {
+		return new Address("JM Road","Pune");
+	}
+	
+	
+}
